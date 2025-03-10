@@ -1,0 +1,23 @@
+{
+  "name": "shared-models",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkshaySangani/shared-models.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkshaySangani/shared-models/issues"
+  },
+  "homepage": "https://github.com/AkshaySangani/shared-models#readme",
+  "description": "",
+  "dependencies": {
+    "mongoose": "^8.12.1"
+  }
+}
