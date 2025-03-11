@@ -44,4 +44,5 @@ const CouponSchema = new Schema({
     }
 }, { versionKey: false, timestamps: true });
 
-export const CouponModel = Mongoose.model('Coupon', CouponSchema);
+// export const CouponModel = Mongoose.model('Coupon', CouponSchema);
+export default CouponSchema;

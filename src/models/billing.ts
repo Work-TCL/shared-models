@@ -36,7 +36,8 @@ const BillingSchema = new Schema(
 // Create an index on the expiration field
 // BillingSchema.index({ userId: 1 });
 
-export const BillingModel = Mongoose.model(
-  SCHEMA.BILLING_SCHEMA,
-  BillingSchema
-);
+// export const BillingModel = Mongoose.model(
+//   SCHEMA.BILLING_SCHEMA,
+//   BillingSchema
+// );
+export default BillingSchema;

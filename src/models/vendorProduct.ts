@@ -19,4 +19,5 @@ const VendorProductSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-export const VendorProductModel = Mongoose.model("VendorProduct", VendorProductSchema);
+// export const VendorProductModel = Mongoose.model("VendorProduct", VendorProductSchema);
+export default VendorProductSchema;

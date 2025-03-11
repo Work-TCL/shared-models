@@ -69,4 +69,5 @@ const AccountSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-export const AccountModel = Mongoose.model(SCHEMA.ACCOUNT, AccountSchema);
+// const AccountModel = Mongoose.model(SCHEMA.ACCOUNT, AccountSchema);
+export default AccountSchema;

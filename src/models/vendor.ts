@@ -122,4 +122,5 @@ const VendorSchema = new Schema(
 // Creating indexes for optimization
 VendorSchema.index({ company_email: 1 }, { unique: true });
 
-export const VendorModel = Mongoose.model(SCHEMA.VENDOR, VendorSchema);
+// export const VendorModel = Mongoose.model(SCHEMA.VENDOR, VendorSchema);
+export default VendorSchema;

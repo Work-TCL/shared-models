@@ -18,4 +18,5 @@ const TagsSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-export const TagsModel = Mongoose.model("Tags", TagsSchema);
+// export const TagsModel = Mongoose.model("Tags", TagsSchema);
+export default TagsSchema;

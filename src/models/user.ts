@@ -28,6 +28,5 @@ const UserSchema = new Schema({
     },
 }, { versionKey: false, timestamps: true });
 
-export const UserModel = Mongoose.model('User', UserSchema);
-
-
+// const UserModel = Mongoose.model('User', UserSchema);
+export default UserSchema;

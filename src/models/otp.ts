@@ -51,4 +51,5 @@ const OTPSchema = new Schema(
 // Create an index on the expiration field
 OTPSchema.index({ expiresAt: 1 }, { expireAfterSeconds: 0 });
 
-export const OTPModel = Mongoose.model(SCHEMA.OTP, OTPSchema);
+// export const OTPModel = Mongoose.model(SCHEMA.OTP, OTPSchema);
+export default OTPSchema;

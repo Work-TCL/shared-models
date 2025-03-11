@@ -9,5 +9,5 @@ export * from './models/coupon';
 export * from "./models/account";
 export * from "./models/vendor";
 export * from "./models/otp";
-export * from "./models/blling";
+export * from "./models/billing";
 export * from "./models/creator";

@@ -48,4 +48,5 @@ const CreatorSchema = new Schema(
   { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
 );
 
-export const CreatorModel = Mongoose.model(SCHEMA.CREATOR, CreatorSchema);
+// export const CreatorModel = Mongoose.model(SCHEMA.CREATOR, CreatorSchema);
+export default CreatorSchema;

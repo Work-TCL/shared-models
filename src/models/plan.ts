@@ -37,6 +37,7 @@ const PlanSchema = new Schema({
     },
 }, { versionKey: false, timestamps: true });
 
-export const PlanModel = Mongoose.model('Plan', PlanSchema);
+// export const PlanModel = Mongoose.model('Plan', PlanSchema);
+export default PlanSchema;
 
 

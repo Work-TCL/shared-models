@@ -19,4 +19,5 @@ const CreatorProductSchema = new Schema(
   { versionKey: false, timestamps: true }
 );
 
-export const CreatorProductModel = Mongoose.model("CreatorProduct", CreatorProductSchema);
+// export const CreatorProductModel = Mongoose.model("CreatorProduct", CreatorProductSchema);
+export default CreatorProductSchema;
