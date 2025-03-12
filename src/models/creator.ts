@@ -20,6 +20,10 @@ const CreatorSchema = new Schema(
       type: String,
       unique: true,
     },
+    phone:{
+      type: String,
+      required: true,
+    },
     title: {
       type: String,
     },
@@ -33,10 +37,10 @@ const CreatorSchema = new Schema(
       type: [String],
     },
     category: {
-      type: String,
+      type: [String],
     },
     sub_category: {
-      type: String,
+      type: [String],
     },
     profile_image: {
       type: String,
