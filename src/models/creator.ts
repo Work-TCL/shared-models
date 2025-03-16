@@ -1,13 +1,5 @@
 import Mongoose from "mongoose";
 
-const SCHEMA = {
-  ACCOUNT: "Account",
-  OTP: "OTP",
-  BILLING_SCHEMA: "Billing",
-  VENDOR: "Vendor",
-  CREATOR: 'Creator'
-};
-
 const { Schema } = Mongoose;
 
 const CreatorSchema = new Schema(
