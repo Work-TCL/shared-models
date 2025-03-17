@@ -4,6 +4,11 @@ const { Schema } = Mongoose;
 
 const VendorSchema = new Schema(
   {
+    accountId: {
+      type: Schema.Types.ObjectId,
+      ref: "Account",
+      required: true,
+    },
     business_name: {
       type: String,
       required: true,
