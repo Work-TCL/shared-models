@@ -14,6 +14,9 @@ const CreatorChannelSchema = new Schema({
         type: String,
         required: true,
     },
+    handleName: {
+        type: String,
+    },
     channelType: {
         type: String,
         enum: ["youtube", "instagram"],
