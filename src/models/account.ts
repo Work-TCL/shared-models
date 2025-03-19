@@ -11,7 +11,7 @@ const SCHEMA = {
   OTP: "OTP",
   BILLING_SCHEMA: "Billing",
   VENDOR: "Vendor",
-  CREATOR: 'Creator'
+  CREATOR: "Creator",
 };
 
 const { Schema } = Mongoose;
@@ -19,16 +19,6 @@ const { Schema } = Mongoose;
 // Account Schema
 const AccountSchema = new Schema(
   {
-    vendorId: {
-      type: Schema.Types.ObjectId,
-      ref: SCHEMA.VENDOR,
-      required: false,
-    },
-    creatorId: {
-      type: Schema.Types.ObjectId,
-      ref: SCHEMA.CREATOR,
-      required: false,
-    },
     name: {
       type: String,
       required: true,

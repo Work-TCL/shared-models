@@ -4,6 +4,11 @@ const { Schema } = Mongoose;
 
 const CreatorSchema = new Schema(
   {
+    accountId: {
+      type: Schema.Types.ObjectId,
+      ref: "Account",
+      required: true,
+    },
     full_name: {
       type: String,
       trim: true,
@@ -12,7 +17,7 @@ const CreatorSchema = new Schema(
       type: String,
       unique: true,
     },
-    phone:{
+    phone: {
       type: String,
       required: true,
     },
@@ -29,10 +34,22 @@ const CreatorSchema = new Schema(
       type: [String],
     },
     category: {
-      type: [String],
+      type: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "Category",
+          required: true,
+        },
+      ],
     },
     sub_category: {
-      type: [String],
+      type: [
+        {
+          type: Schema.Types.ObjectId,
+          ref: "Category",
+          required: true,
+        },
+      ],
     },
     profile_image: {
       type: String,
