@@ -57,6 +57,10 @@ const CreatorSchema = new Schema(
     banner_image: {
       type: String,
     },
+    channels: [{ // Add this field to reference CreatorChannel
+      type: Schema.Types.ObjectId,
+      ref: "CreatorChannel",
+    }],
   },
   { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
 );
