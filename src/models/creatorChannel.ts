@@ -30,6 +30,9 @@ const CreatorChannelSchema = new Schema({
     },
     lastMonthViews: {
         type: Number
+    },
+    lastTokenGenerated: {
+        type: Date
     }
 },{
     versionKey: false,
