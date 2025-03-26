@@ -5,9 +5,13 @@ const { Schema } = Mongoose;
 // Product Schema
 const ProductSchema = new Schema(
   {
-    name: {
+    title: {
       type: String,
       required: true,
+    },
+    channelProductId: {
+      type: String,
+      required: true
     },
     sku: {
       type: String,
@@ -17,12 +21,20 @@ const ProductSchema = new Schema(
     description: {
       type: String,
     },
-    category: {
-      type: Schema.Types.ObjectId,
-      ref: "Category",
+    media: {
+      type: [String],
+      default: [],
+    },
+    channelName: {
+      type: String,
+      enum: ['shopify', 'woocommerce', 'magento', 'bigcommerce', 'wix'],
       required: true,
     },
-    tags:{
+    category: {
+      type: [Schema.Types.ObjectId],
+      ref: "Category",
+    },
+    tags: {
       type: [String],
       default: [],
     }
