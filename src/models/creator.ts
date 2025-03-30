@@ -61,6 +61,10 @@ const CreatorSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "CreatorChannel",
     }],
+    completed:{
+      type: Number,
+      default: 0
+    },
   },
   { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
 );
