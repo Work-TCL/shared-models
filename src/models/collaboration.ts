@@ -39,7 +39,6 @@ const CollaborationSchema = new Schema(
     },
     couponCode: {
       type: String,
-      unique: true,
       required: true,
     },
     commissionPercentage: {
