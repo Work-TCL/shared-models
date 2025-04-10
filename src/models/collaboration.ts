@@ -19,6 +19,11 @@ const CollaborationSchema = new Schema(
       ref: "Vendor",
       required: true,
     },
+    requestId:{
+      type: Schema.Types.ObjectId,
+      ref: "Request",
+      required: true,
+    },
     collaborationStatus: {
       type: String,
       enum: ["REQUESTED","PENDING", "ACTIVE", "REJECTED", "EXPIRED"],
@@ -49,6 +54,14 @@ const CollaborationSchema = new Schema(
     expiresAt: {
       type: Date,
       required: true,
+    },
+    agreedByCreator: {
+      type: Boolean,
+      default: false,
+    },
+    agreedByVendor: {
+      type: Boolean,
+      default: false,
     },
     // shop: {
     //   type: String,
