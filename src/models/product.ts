@@ -13,6 +13,11 @@ const ProductSchema = new Schema(
       type: String,
       required: true
     },
+    vendorId: {
+      type: Schema.Types.ObjectId,
+      ref: "Vendor",
+      required: true,
+    },
     sku: {
       type: String,
       required: true,
