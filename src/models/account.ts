@@ -38,9 +38,9 @@ const AccountSchema = new Schema(
     },
     type: {
       type: String,
-      required: true,
+      // required: true,
       enum: Object.values(USER_TYPE),
-      default: USER_TYPE.USER,
+      // default: USER_TYPE.USER,
     },
     isActive: {
       type: Boolean,
