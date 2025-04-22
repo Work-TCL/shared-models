@@ -9,6 +9,7 @@ const CreatorStoreSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: "Creator",
       required: true,
+      unique: true,
     },
     category: {
       type: [Schema.Types.ObjectId],
