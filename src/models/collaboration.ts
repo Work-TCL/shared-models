@@ -19,14 +19,14 @@ const CollaborationSchema = new Schema(
       ref: "Vendor",
       required: true,
     },
-    requestId:{
+    requestId: {
       type: Schema.Types.ObjectId,
       ref: "Request",
       required: true,
     },
     collaborationStatus: {
       type: String,
-      enum: ["REQUESTED","PENDING", "ACTIVE", "REJECTED", "EXPIRED"],
+      enum: ["REQUESTED", "PENDING", "ACTIVE", "REJECTED", "EXPIRED"],
       default: "REQUESTED",
     },
     utmLink: {
@@ -36,32 +36,37 @@ const CollaborationSchema = new Schema(
     discountType: {
       type: String,
       enum: ["PERCENTAGE", "FIXED_AMOUNT"],
-      required: true,
     },
     discountValue: {
       type: Number,
-      required: true,
     },
     couponCode: {
       type: String,
-      required: true,
     },
-    commissionPercentage: {
+    commissionValue: {
       type: Number,
       required: true,
       default: 0,
     },
-    expiresAt: {
-      type: Date,
+    commissionType: {
+      type: String,
+      enum: ["PERCENTAGE", "FIXED_AMOUNT"],
       required: true,
     },
-    agreedByCreator: {
-      type: Boolean,
-      default: false,
+    startAt: {
+      type: Date,
+      default: null,
     },
-    agreedByVendor: {
-      type: Boolean,
-      default: false,
+    expiresAt: {
+      type: Date,
+      default: null,
+    },
+
+    negotiation: {
+      creatorProposal: { type: Number, default: null },
+      vendorProposal: { type: Number, default: null },
+      agreedByCreator: { type: Boolean, default: false },
+      agreedByVendor: { type: Boolean, default: false },
     },
     // shop: {
     //   type: String,
@@ -70,7 +75,6 @@ const CollaborationSchema = new Schema(
   },
   { versionKey: false, timestamps: true }
 );
-
 
 // export const CollaborationModel = mongoose.model("Collaboration", CollaborationSchema);
 export default CollaborationSchema;
