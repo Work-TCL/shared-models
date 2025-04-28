@@ -33,6 +33,10 @@ const CollaborationSchema = new Schema(
       type: String,
       default: null, // Will be set after UTM generation
     },
+    crmLink:{
+      type: String,
+      default: null,
+    },
     discountType: {
       type: String,
       enum: ["PERCENTAGE", "FIXED_AMOUNT"],
