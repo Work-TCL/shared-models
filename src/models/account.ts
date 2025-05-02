@@ -55,6 +55,11 @@ const AccountSchema = new Schema(
       ref: SCHEMA.BILLING_SCHEMA,
       required: false,
     },
+    provider: {
+      type: String,
+      enum: ["credentials", "google"],
+      default: "credentials",
+    },
   },
   { versionKey: false, timestamps: true }
 );
