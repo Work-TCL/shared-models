@@ -51,6 +51,12 @@ const CreatorSchema = new Schema(
         },
       ],
     },
+    state: {
+      type: String,
+    },
+    city: {
+      type: String,
+    },
     profile_image: {
       type: String,
     },

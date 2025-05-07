@@ -37,19 +37,13 @@ const VendorSchema = new Schema(
       type: String,
       required: true,
     },
-    // brand_documents: [
-    //   {
-    //     document_type: {
-    //       type: String,
-    //       required: true,
-    //     },
-    //     file_url: {
-    //       type: String,
-    //       required: true,
-    //     },
-    //   },
-    // ],
     profile_image: {
+      type: String,
+    },
+    state: {
+      type: String,
+    },
+    city: {
       type: String,
     },
     contacts: [
