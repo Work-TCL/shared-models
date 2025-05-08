@@ -51,6 +51,12 @@ const CreatorSchema = new Schema(
         },
       ],
     },
+    dob: {
+      type: String,
+    },
+    gender: {
+      type: String,
+    },
     state: {
       type: String,
     },
