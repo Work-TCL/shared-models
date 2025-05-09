@@ -29,7 +29,7 @@ const CreatorSchema = new Schema(
     tags: [{ type: String }],
 
     // Others
-    // channels: [{ type: Schema.Types.ObjectId, ref: "CreatorChannel" }],
+    channels: [{ type: Schema.Types.ObjectId, ref: "CreatorChannel" }],
 
     // Registration progress tracking
     completed_step: { type: Number, default: 0 }, // 0 to 3
