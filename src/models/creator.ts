@@ -1,85 +1,46 @@
-import Mongoose from "mongoose";
-
-const { Schema } = Mongoose;
+import mongoose from "mongoose";
+const { Schema } = mongoose;
 
 const CreatorSchema = new Schema(
   {
-    accountId: {
-      type: Schema.Types.ObjectId,
-      ref: "Account",
-      required: true,
-    },
-    full_name: {
+    accountId: { type: Schema.Types.ObjectId, ref: "Account", required: true },
+    
+    // Step 1 fields
+    full_name: { type: String, trim: true },
+    user_name: { type: String, unique: true },
+    email: { type: String },
+    phone: { type: String },
+    dob: { type: String },
+    gender: { type: String },
+    state: { type: String },
+    city: { type: String },
+    
+    // Step 2 fields
+    instagram_link: { type: String },
+    youtube_link: { type: String },
+
+    // Step 3 fields (store + visuals)
+    store_name: { type: String },
+    store_description: { type: String },
+    profile_image: { type: String },
+    banner_image: { type: String },
+    category: [{ type: Schema.Types.ObjectId, ref: "Category" }],
+    sub_category: [{ type: Schema.Types.ObjectId, ref: "Category" }],
+    tags: [{ type: String }],
+
+    // Others
+    // channels: [{ type: Schema.Types.ObjectId, ref: "CreatorChannel" }],
+
+    // Registration progress tracking
+    completed_step: { type: Number, default: 0 }, // 0 to 3
+    status: {
       type: String,
-      trim: true,
-    },
-    user_name: {
-      type: String,
-      unique: true,
-    },
-    phone: {
-      type: String,
-      required: true,
-    },
-    title: {
-      type: String,
-    },
-    long_description: {
-      type: String,
-    },
-    short_description: {
-      type: String,
-    },
-    tags: {
-      type: [String],
-    },
-    category: {
-      type: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: "Category",
-          required: true,
-        },
-      ],
-    },
-    sub_category: {
-      type: [
-        {
-          type: Schema.Types.ObjectId,
-          ref: "Category",
-          required: true,
-        },
-      ],
-    },
-    dob: {
-      type: String,
-    },
-    gender: {
-      type: String,
-    },
-    state: {
-      type: String,
-    },
-    city: {
-      type: String,
-    },
-    profile_image: {
-      type: String,
-    },
-    banner_image: {
-      type: String,
-    },
-    channels: [{ // Add this field to reference CreatorChannel
-      type: Schema.Types.ObjectId,
-      ref: "CreatorChannel",
-    }],
-    completed:{
-      type: Number,
-      default: 0
+      enum: ["IN_PROGRESS", "PENDING_APPROVAL", "APPROVED", "REJECTED"],
+      default: "IN_PROGRESS",
     },
   },
-  { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
+  { timestamps: true, versionKey: false }
 );
 
-// export const CreatorModel = Mongoose.model(SCHEMA.CREATOR, CreatorSchema);
+// export const CreatorModel = mongoose.model("Creator", CreatorSchema);
 export default CreatorSchema;
