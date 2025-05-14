@@ -39,10 +39,71 @@ const ProductSchema = new Schema(
       type: [Schema.Types.ObjectId],
       ref: "Category",
     },
+    subCategory: {
+      type: [Schema.Types.ObjectId],
+      ref: "Category",
+    },
     tags: {
       type: [String],
       default: [],
-    }
+    },
+    lifeTime: {
+      type: Boolean,
+      default: false,
+    },
+    startDate: {
+      type: Date,
+    },
+    endDate: {
+      type: Date,
+    },
+    status: {
+      type: String,
+      enum: ["ACTIVE", "PENDING", "EXPIRED"],
+      default: "PENDING",
+    },
+    commission: {
+      type: Number,
+      required: true,
+    },
+    commission_type: {
+      type: String,
+      enum: ["PERCENTAGE", "FIXED_AMOUNT"],
+      required: true,
+    },  
+    referenceLinks: {
+      type: [String],
+      default: [],
+    },  
+    creatorMaterial: {
+      type: [String],
+      required: false,
+    },
+    videoType: {
+      type: String,
+      required: true,
+    },
+    channels:{
+      type: [String],
+      enum: ["youtube", "instagram"],
+      required: true,
+     },
+     notes: {
+      type: String,
+     },
+     discount: {
+      type: Number,
+      required: false,
+     }, 
+     discountType: {
+      type: String,
+      enum: ["PERCENTAGE", "FIXED_AMOUNT"],
+      required: false,
+     },
+     couponCode: {
+      type: String,
+      required: false,
+     },
   },
   { versionKey: false, timestamps: true }
 );

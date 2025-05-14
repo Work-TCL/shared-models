@@ -28,7 +28,6 @@ const VendorSchema = new Schema(
         name: { type: String, required: true },
         email: { type: String, required: true, lowercase: true },
         phone: { type: String, required: true },
-        isDefault: { type: Boolean, default: false },
       },
     ],
 
