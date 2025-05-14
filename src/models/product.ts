@@ -30,6 +30,9 @@ const ProductSchema = new Schema(
       type: [String],
       default: [],
     },
+    price:{
+      type: Number,
+    },
     channelName: {
       type: String,
       enum: ['shopify', 'woocommerce', 'magento', 'bigcommerce', 'wix'],
