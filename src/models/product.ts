@@ -83,7 +83,7 @@ const ProductSchema = new Schema(
       required: false,
     },
     videoType: {
-      type: String,
+      type: [String],
       required: true,
     },
     channels:{
