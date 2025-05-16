@@ -60,6 +60,10 @@ const ProductSchema = new Schema(
     endDate: {
       type: Date,
     },
+    freeProduct: {
+      type: Boolean,
+      default: false,
+    },
     status: {
       type: String,
       enum: ["ACTIVE", "PENDING", "EXPIRED"],
