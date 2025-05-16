@@ -25,6 +25,10 @@ const CreatorChannelSchema = new Schema({
         enum: ["youtube", "instagram"],
         required: true,
     },
+    followers:{
+        type: Number,
+        default: 0,
+    },
     lastFiveVideoViews: {
         type: Number
     },
