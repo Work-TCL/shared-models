@@ -19,9 +19,14 @@ const CollaborationSchema = new Schema(
       ref: "Vendor",
       required: true,
     },
-    requestId: {
-      type: Schema.Types.ObjectId,
-      ref: "Request",
+    // requestId: {
+    //   type: Schema.Types.ObjectId,
+    //   ref: "Request",
+    //   required: true,
+    // },
+    requestedBy: {
+      type: String,
+      enum: ["vendor", "creator"],
       required: true,
     },
     collaborationStatus: {
@@ -65,10 +70,14 @@ const CollaborationSchema = new Schema(
       type: Date,
       default: null,
     },
-
+    bids:{
+      type: [Schema.Types.ObjectId],
+      ref: "Bidding",
+      default: [],
+    },
     negotiation: {
-      creatorProposal: { type: Number, default: null },
-      vendorProposal: { type: Number, default: null },
+      // creatorProposal: { type: Number, default: null },
+      // vendorProposal: { type: Number, default: null },
       agreedByCreator: { type: Boolean, default: false },
       agreedByVendor: { type: Boolean, default: false },
     },
@@ -82,3 +91,12 @@ const CollaborationSchema = new Schema(
 
 // export const CollaborationModel = mongoose.model("Collaboration", CollaborationSchema);
 export default CollaborationSchema;
+
+
+const biddingSchema = new Schema({
+  proposal: { type: Number, default: null },
+  type: { type: String, enum: ["PERCENTAGE", "FIXED_AMOUNT"], required: true },
+  sender: { type: String, enum: ["vendor", "creator"], required: true },
+}, { versionKey: false, timestamps: true });
+
+export { biddingSchema };
