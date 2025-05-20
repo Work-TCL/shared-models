@@ -39,6 +39,15 @@ const PlanSchema = new Schema({
         type: String,
         required: true,
         unique: true,
+    },
+    period: {
+        type: String
+    },
+    interval: {
+        type: Number
+    },
+    productLimit: { 
+        type: Number
     }
 }, { versionKey: false, timestamps: true });
 

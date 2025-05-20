@@ -27,13 +27,25 @@ const SubscriptionSchema = new Schema({
     status: {
         type: String,
         required: true,
-        enum: ['active', 'cancel'],  // Subscription status: active, cancelled, etc.
-        default: 'active',
+        enum: ['created','active', 'cancelled'],  
+        default: 'created',
+    },
+    paymentStatus: {
+        type: String,
+        enum: ['failed', 'success'],  
+    },
+    redirectUrl: {
+        type: String,
+        unique: true
+    },
+    startedAt: {
+        type: Date,
+        default: Date.now
     },
     isActive: {
         type: Boolean,
         default: true
-    },
+    }
 }, { versionKey: false, timestamps: true });
 
 export default SubscriptionSchema;
