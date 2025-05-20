@@ -30,6 +30,7 @@ const CreatorSchema = new Schema(
 
     // Others
     channels: [{ type: Schema.Types.ObjectId, ref: "CreatorChannel" }],
+    showTrending: { type: Boolean, default: false },
 
     // Registration progress tracking
     completed_step: { type: Number, default: 0 }, // 0 to 3
