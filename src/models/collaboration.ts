@@ -38,6 +38,10 @@ const CollaborationSchema = new Schema(
       type: String,
       default: null, // Will be set after UTM generation
     },
+    utmLinkIdentifier: {
+      type: String,
+      default: null,
+    },
     crmLink:{
       type: String,
       default: null,

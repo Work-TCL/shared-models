@@ -13,6 +13,12 @@ const ProductSchema = new Schema(
       type: String,
       required: true
     },
+    channelProductVendor: {
+      type: String,
+    },
+    channelProductType: {
+      type: String,
+    },
     vendorId: {
       type: Schema.Types.ObjectId,
       ref: "Vendor",
@@ -37,6 +43,10 @@ const ProductSchema = new Schema(
       type: String,
       enum: ['shopify', 'woocommerce', 'magento', 'bigcommerce', 'wix'],
       required: true,
+    },
+    variants: {
+      type: [Object],
+      default: [],
     },
     category: {
       type: [Schema.Types.ObjectId],
