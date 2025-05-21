@@ -46,9 +46,21 @@ const PlanSchema = new Schema({
     interval: {
         type: Number
     },
+    commission: {
+        type: Number,
+    },
     productLimit: { 
         type: Number
-    }
+    },
+    allowCollaboration: {
+        type: Boolean,
+    },
+    analytics: {
+        type: Boolean,
+    },
+    prioritySupport: {
+        type: Boolean,
+    },
 }, { versionKey: false, timestamps: true });
 
 // export const PlanModel = Mongoose.model('Plan', PlanSchema);
