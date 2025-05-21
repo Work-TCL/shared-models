@@ -60,7 +60,11 @@ const PlanSchema = new Schema({
     },
     prioritySupport: {
         type: Boolean,
-    },
+    },  
+    storeIntegration: {
+        type: Boolean,
+        default: true
+    }
 }, { versionKey: false, timestamps: true });
 
 // export const PlanModel = Mongoose.model('Plan', PlanSchema);
