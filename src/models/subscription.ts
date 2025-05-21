@@ -27,8 +27,8 @@ const SubscriptionSchema = new Schema({
     status: {
         type: String,
         required: true,
-        enum: ['created','active', 'cancelled'],  
-        default: 'created',
+        enum: ['pending','active', 'cancelled'],  
+        default: 'pending',
     },
     paymentStatus: {
         type: String,
