@@ -42,6 +42,14 @@ const SubscriptionSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    expiresAt: {
+        type: Date,
+        default: null
+    },
+    nextDueAt: {
+        type: Date,
+        default: null
+    },
     isActive: {
         type: Boolean,
         default: true
