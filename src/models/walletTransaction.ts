@@ -5,12 +5,17 @@ const { Schema } = Mongoose;
 const WalletTransactionSchema = new Schema(
     {
         accountId: { type: Schema.Types.ObjectId, ref: "Account", required: true },
+        walletId: { type: Schema.Types.ObjectId, ref: "Wallet", required: true },
         amount: { type: Number, required: true },
-        type: { type: String, enum: ['recharge', 'withdraw'], required: true },
-        description: String,
-        razorpayPaymentId: String,
+        type: { type: String, enum: ['DEPOSITE', 'WITHDRAW'], required: true },
+        status: { type: String, enum: ['pending', "success", "failed"], default: "pending" },
+        description: { type: String },
+        razorpayOrderId: { type: String },
+        razorpayPaymentId: { type: String },
+        method: { type: String },
+        failureReason: { type: String }
     },
-    { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
+    { timestamps: true, versionKey: false }
 );
 
 export default WalletTransactionSchema;
