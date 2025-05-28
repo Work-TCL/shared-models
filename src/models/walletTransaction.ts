@@ -10,7 +10,8 @@ const WalletTransactionSchema = new Schema(
         type: { type: String, enum: ['DEPOSITE', 'WITHDRAW'], required: true },
         status: { type: String, enum: ['pending', "success", "failed"], default: "pending" },
         description: { type: String },
-        razorpayOrderId: { type: String },
+        razorpayOrderId: { type: String }, // for deposite
+        razorpayPayoutId: { type: String }, // for withdraw 
         razorpayPaymentId: { type: String },
         method: { type: String },
         failureReason: { type: String }
