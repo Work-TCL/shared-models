@@ -38,6 +38,11 @@ const VendorSchema = new Schema(
 
     // Step Tracking
     completed_step: { type: Number, default: 0 },
+    status: {
+      type: String,
+      enum: ["IN_PROGRESS", "PENDING_APPROVAL", "APPROVED", "REJECTED"],
+      default: "IN_PROGRESS",
+    },
     // isApproved: { type: Boolean, default: false },
   },
   { timestamps: true, versionKey: false }
