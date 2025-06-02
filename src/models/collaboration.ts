@@ -101,6 +101,7 @@ const biddingSchema = new Schema({
   proposal: { type: Number, default: null },
   type: { type: String, enum: ["PERCENTAGE", "FIXED_AMOUNT"], required: true },
   sender: { type: String, enum: ["vendor", "creator"], required: true },
+  isSeen: { type: Boolean, default: false },
 }, { versionKey: false, timestamps: true });
 
 export { biddingSchema };
