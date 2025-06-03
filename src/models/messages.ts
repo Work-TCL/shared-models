@@ -19,6 +19,10 @@ const MessagesSchema = new Schema(
         },
         messageJson:{
             type: Object,
+        },
+        isRead:{
+            type: Boolean,
+            default: false,
         }
     },
     { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
