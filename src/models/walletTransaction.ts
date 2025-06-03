@@ -14,7 +14,9 @@ const WalletTransactionSchema = new Schema(
         razorpayPayoutId: { type: String }, // for withdraw 
         razorpayPaymentId: { type: String },
         method: { type: String },
-        failureReason: { type: String }
+        failureReason: { type: String },
+        fees: { type: Number },
+        tax: { type: Number }
     },
     { timestamps: true, versionKey: false }
 );
