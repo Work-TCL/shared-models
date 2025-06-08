@@ -15,8 +15,8 @@ const WalletTransactionSchema = new Schema(
         razorpayPaymentId: { type: String },
         method: { type: String },
         failureReason: { type: String },
-        fees: { type: Number },
-        tax: { type: Number }
+        fees: { type: Number, default: 0},
+        tax: { type: Number, default: 0}
     },
     { timestamps: true, versionKey: false }
 );
