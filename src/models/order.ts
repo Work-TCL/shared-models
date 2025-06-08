@@ -27,8 +27,13 @@ const orderSchema = new Schema({
   },
   orderStatus:{
     type: String,
-  }
-    
+    enum: ["PENDING", "DELIVERED", "CANCELLED", "RETURNED"],
+    default: "PENDING",
+  },
+  commission:{
+    type: Number,
+  },
+ 
 }, { timestamps: true , versionKey: false});
 
 export default orderSchema;

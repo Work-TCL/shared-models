@@ -4,9 +4,9 @@ const { Schema } = Mongoose;
 
 const WishListSchema = new Schema(
     {
-        productId:{
+        collaborationId:{
             type: Mongoose.Schema.Types.ObjectId,
-            ref: "Product",
+            ref: "Collaboration",
         },
         accountId:{
             type: Mongoose.Schema.Types.ObjectId,
