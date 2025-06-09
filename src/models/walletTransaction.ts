@@ -13,8 +13,8 @@ const WalletTransactionSchema = new Schema(
         razorpayOrderId: { type: String }, // for deposite
         razorpayPayoutId: { type: String }, // for withdraw 
         razorpayPaymentId: { type: String },
-        method: { type: String },
-        failureReason: { type: String },
+        paymentMethod: { type: String },
+        error: { type: String, default: "" },
         fees: { type: Number, default: 0},
         tax: { type: Number, default: 0}
     },
