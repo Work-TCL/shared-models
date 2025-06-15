@@ -12,7 +12,7 @@ const ChannelSchema = new Schema({
     },
     channelType: {
         type: String,
-        enum: ["shopify"],
+        enum: ["shopify","wordpress"],
         required: true,
     },
     channelStatus: {
