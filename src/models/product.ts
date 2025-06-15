@@ -40,8 +40,11 @@ const ProductSchema = new Schema(
     },
     channelName: {
       type: String,
-      enum: ['shopify', 'woocommerce', 'magento', 'bigcommerce', 'wix'],
+      enum: ['shopify', 'wordpress','woocommerce', 'magento', 'bigcommerce', 'wix'],
       required: true,
+    },
+    variantLabel: {
+      type: String,
     },
     variants: {
       type: [Object],
