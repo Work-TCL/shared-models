@@ -20,7 +20,7 @@ const orderSchema = new Schema({
   },
   channel: {
     type: String,
-    enum: ["shopify", "amazon", "walmart", "ebay", "etsy", "other"],
+    enum: ["shopify","wordpress", "amazon", "walmart", "ebay", "etsy", "other"],
   },
   orderDate:{
     type: Date,
