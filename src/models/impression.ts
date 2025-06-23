@@ -16,7 +16,7 @@ const ImpressionSchema = new Schema(
     },
     channel: {
       type: String,
-      enum: ["SHOPIFY", "AMAZON", "ECOM"],
+      enum: ["shopify", "wordpress"],
     },
   },
   { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
