@@ -31,7 +31,7 @@ const CollaborationSchema = new Schema(
     },
     collaborationStatus: {
       type: String,
-      enum: ["REQUESTED", "PENDING", "ACTIVE", "REJECTED", "EXPIRED"],
+      enum: ["REQUESTED", "PENDING", "ACTIVE", "REJECTED", "EXPIRED","PAUSED"],
       default: "REQUESTED",
     },
     utmLink: {
