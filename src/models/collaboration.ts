@@ -31,7 +31,7 @@ const CollaborationSchema = new Schema(
     },
     collaborationStatus: {
       type: String,
-      enum: ["REQUESTED", "PENDING", "ACTIVE", "REJECTED", "EXPIRED","PAUSED"],
+      enum: ["REQUESTED", "PENDING", "ACTIVE", "REJECTED", "EXPIRED", "PAUSED"],
       default: "REQUESTED",
     },
     utmLink: {
@@ -42,7 +42,7 @@ const CollaborationSchema = new Schema(
       type: String,
       default: null,
     },
-    crmLink:{
+    crmLink: {
       type: String,
       default: null,
     },
@@ -74,7 +74,7 @@ const CollaborationSchema = new Schema(
       type: Date,
       default: null,
     },
-    bids:{
+    bids: {
       type: [Schema.Types.ObjectId],
       ref: "Bidding",
       default: [],
@@ -96,12 +96,18 @@ const CollaborationSchema = new Schema(
 // export const CollaborationModel = mongoose.model("Collaboration", CollaborationSchema);
 export default CollaborationSchema;
 
-
-const biddingSchema = new Schema({
-  proposal: { type: Number, default: null },
-  type: { type: String, enum: ["PERCENTAGE", "FIXED_AMOUNT"], required: true },
-  sender: { type: String, enum: ["vendor", "creator"], required: true },
-  isSeen: { type: Boolean, default: false },
-}, { versionKey: false, timestamps: true });
+const biddingSchema = new Schema(
+  {
+    proposal: { type: Number, default: null },
+    type: {
+      type: String,
+      enum: ["PERCENTAGE", "FIXED_AMOUNT"],
+      required: true,
+    },
+    sender: { type: String, enum: ["vendor", "creator"], required: true },
+    isSeen: { type: Boolean, default: false },
+  },
+  { versionKey: false, timestamps: true }
+);
 
 export { biddingSchema };
