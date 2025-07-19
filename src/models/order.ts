@@ -33,7 +33,9 @@ const orderSchema = new Schema({
   commission:{
     type: Number,
   },
- 
+  blockedUntil: {
+    type: Date
+  }
 }, { timestamps: true , versionKey: false});
 
 export default orderSchema;

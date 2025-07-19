@@ -123,6 +123,9 @@ const ProductSchema = new Schema(
       type: String,
       required: false,
      },
+     blockedDays:{
+      type: Number
+     }
   },
   { versionKey: false, timestamps: true }
 );
