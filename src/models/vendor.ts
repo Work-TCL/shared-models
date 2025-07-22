@@ -20,7 +20,7 @@ const VendorSchema = new Schema(
     city: { type: String, required: true },
     pin_code: { type: String, required: true },
     category: [{ type: Schema.Types.ObjectId, ref: "Category", required: true }],
-    sub_category: [{ type: Schema.Types.ObjectId, ref: "Category", required: true }],
+    sub_category: [{ type: Schema.Types.ObjectId, ref: "Category", required: false}],
     website: { type: String },
 
     contacts: [
