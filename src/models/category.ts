@@ -8,7 +8,6 @@ const CategorySchema = new Schema(
     name: {
       type: String,
       required: true,
-      unique: true,
     },
     parentId: {
       type: Schema.Types.ObjectId,
