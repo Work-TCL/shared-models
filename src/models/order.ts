@@ -35,6 +35,10 @@ const orderSchema = new Schema({
   },
   blockedUntil: {
     type: Date
+  },
+  quantity: {
+    type: Number,
+    default: 1
   }
 }, { timestamps: true , versionKey: false});
 
