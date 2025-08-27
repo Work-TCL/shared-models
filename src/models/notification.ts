@@ -7,11 +7,11 @@ const NotificationSchema = new Schema(
        userId: {
         type: Mongoose.Types.ObjectId,
        },
-    //    userType: { // New field to specify the type of user
-    //     type: String,
-    //     enum: ['creator', 'vendor'], // Restrict to specific values
-    //     required: true // Ensure this field is always provided
-    //    },
+       userType: { // New field to specify the type of user
+        type: String,
+        enum: ['creator', 'vendor'], // Restrict to specific values
+        required: true // Ensure this field is always provided
+       },
        message:{
         type: String,
         required: true
@@ -23,6 +23,9 @@ const NotificationSchema = new Schema(
        config: {
         type: Object,
         default: {}
+       },
+       notificationType: {
+         type: String
        }
     },
     { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
