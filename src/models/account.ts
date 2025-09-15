@@ -59,6 +59,10 @@ const AccountSchema = new Schema(
       enum: ["credentials", "google"],
       default: "credentials",
     },
+    isDeleted: {
+      type: Boolean,
+      default: false,
+    }
   },
   { versionKey: false, timestamps: true }
 );
