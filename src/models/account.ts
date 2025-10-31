@@ -11,7 +11,7 @@ const SCHEMA = {
   OTP: "OTP",
   BILLING_SCHEMA: "Billing",
   VENDOR: "Vendor",
-  CREATOR: 'Creator'
+  CREATOR: "Creator",
 };
 
 const { Schema } = Mongoose;
@@ -19,20 +19,9 @@ const { Schema } = Mongoose;
 // Account Schema
 const AccountSchema = new Schema(
   {
-    vendorId: {
-      type: Schema.Types.ObjectId,
-      ref: SCHEMA.VENDOR,
-      required: false,
-    },
-    creatorId: {
-      type: Schema.Types.ObjectId,
-      ref: SCHEMA.CREATOR,
-      required: false,
-    },
     name: {
       type: String,
       required: true,
-      unique: true,
     },
     email: {
       type: String,
@@ -48,9 +37,9 @@ const AccountSchema = new Schema(
     },
     type: {
       type: String,
-      required: true,
+      // required: true,
       enum: Object.values(USER_TYPE),
-      default: USER_TYPE.USER,
+      // default: USER_TYPE.USER,
     },
     isActive: {
       type: Boolean,
@@ -65,6 +54,15 @@ const AccountSchema = new Schema(
       ref: SCHEMA.BILLING_SCHEMA,
       required: false,
     },
+    provider: {
+      type: String,
+      enum: ["credentials", "google"],
+      default: "credentials",
+    },
+    isDeleted: {
+      type: Boolean,
+      default: false,
+    }
   },
   { versionKey: false, timestamps: true }
 );
