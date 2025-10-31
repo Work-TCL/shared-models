@@ -10,7 +10,7 @@ const PlanSchema = new Schema({
         unique: true
     },
     amount: {
-        type: String,
+        type: Number,
         required: true,
     },
     priceLabel: {
@@ -20,12 +20,12 @@ const PlanSchema = new Schema({
         type: String,
         required: true
     },
-    tier: {
-        type: Number,
-        required: true
-    },
+    // tier: {
+    //     type: Number,
+    //     required: true
+    // },
     description: {
-        type: [String],
+        type: String,
     },
     isActive: {
         type: Boolean,
@@ -33,8 +33,38 @@ const PlanSchema = new Schema({
     },
     image: {
         type: String,
-        required: true
+        // required: true
     },
+    plan_id: {
+        type: String,
+        required: true,
+        unique: true,
+    },
+    period: {
+        type: String
+    },
+    interval: {
+        type: Number
+    },
+    commission: {
+        type: Number,
+    },
+    productLimit: { 
+        type: Number
+    },
+    allowCollaboration: {
+        type: Boolean,
+    },
+    analytics: {
+        type: Boolean,
+    },
+    prioritySupport: {
+        type: Boolean,
+    },  
+    storeIntegration: {
+        type: Boolean,
+        default: true
+    }
 }, { versionKey: false, timestamps: true });
 
 // export const PlanModel = Mongoose.model('Plan', PlanSchema);

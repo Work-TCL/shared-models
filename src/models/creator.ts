@@ -1,52 +1,47 @@
-import Mongoose from "mongoose";
-
-const SCHEMA = {
-  ACCOUNT: "Account",
-  OTP: "OTP",
-  BILLING_SCHEMA: "Billing",
-  VENDOR: "Vendor",
-  CREATOR: 'Creator'
-};
-
-const { Schema } = Mongoose;
+import mongoose from "mongoose";
+const { Schema } = mongoose;
 
 const CreatorSchema = new Schema(
   {
-    full_name: {
+    accountId: { type: Schema.Types.ObjectId, ref: "Account", required: true },
+    
+    // Step 1 fields
+    full_name: { type: String, trim: true },
+    user_name: { type: String, unique: true },
+    email: { type: String },
+    phone: { type: String },
+    dob: { type: String },
+    gender: { type: String },
+    state: { type: String },
+    city: { type: String },
+    
+    // Step 2 fields
+    instagram_link: { type: String },
+    youtube_link: { type: String },
+
+    // Step 3 fields (store + visuals)
+    store_name: { type: String },
+    store_description: { type: String },
+    profile_image: { type: String },
+    banner_image: { type: String },
+    category: [{ type: Schema.Types.ObjectId, ref: "Category" }],
+    sub_category: [{ type: Schema.Types.ObjectId, ref: "Category" }],
+    tags: [{ type: String }],
+
+    // Others
+    channels: [{ type: Schema.Types.ObjectId, ref: "CreatorChannel" }],
+    showTrending: { type: Boolean, default: false },
+
+    // Registration progress tracking
+    completed_step: { type: Number, default: 0 }, // 0 to 3
+    status: {
       type: String,
-      trim: true,
-    },
-    user_name: {
-      type: String,
-      unique: true,
-    },
-    title: {
-      type: String,
-    },
-    long_description: {
-      type: String,
-    },
-    short_description: {
-      type: String,
-    },
-    tags: {
-      type: [String],
-    },
-    category: {
-      type: String,
-    },
-    sub_category: {
-      type: String,
-    },
-    profile_image: {
-      type: String,
-    },
-    banner_image: {
-      type: String,
+      enum: ["IN_PROGRESS", "PENDING_APPROVAL", "APPROVED", "REJECTED"],
+      default: "IN_PROGRESS",
     },
   },
-  { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
+  { timestamps: true, versionKey: false }
 );
 
-// export const CreatorModel = Mongoose.model(SCHEMA.CREATOR, CreatorSchema);
+// export const CreatorModel = mongoose.model("Creator", CreatorSchema);
 export default CreatorSchema;

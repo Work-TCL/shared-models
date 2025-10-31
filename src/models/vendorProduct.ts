@@ -15,6 +15,11 @@ const VendorProductSchema = new Schema(
       ref: "Product",
       required: true,
     },
+    channelName: {
+      type: String,
+      enum: ['shopify', 'woocommerce', 'magento', 'bigcommerce', 'wix'],
+      required: true,
+    },
   },
   { versionKey: false, timestamps: true }
 );
