@@ -62,6 +62,10 @@ const AccountSchema = new Schema(
     isDeleted: {
       type: Boolean,
       default: false,
+    },
+    videoCount: {
+      type: Number,
+      default: 0
     }
   },
   { versionKey: false, timestamps: true }
