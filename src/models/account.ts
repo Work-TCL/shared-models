@@ -56,7 +56,7 @@ const AccountSchema = new Schema(
     },
     provider: {
       type: String,
-      enum: ["credentials", "google"],
+      enum: ["credentials", "google", "apple"],
       default: "credentials",
     },
     isDeleted: {
