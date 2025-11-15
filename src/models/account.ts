@@ -66,6 +66,10 @@ const AccountSchema = new Schema(
     videoCount: {
       type: Number,
       default: 0
+    },
+    fcmToken: {
+      type: [String],
+      default: [],
     }
   },
   { versionKey: false, timestamps: true }
