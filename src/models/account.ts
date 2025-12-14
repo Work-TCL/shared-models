@@ -1,11 +1,5 @@
 import Mongoose from "mongoose";
 
-const USER_TYPE = {
-  USER: "user",
-  Vendor: "vendor",
-  Creator: "creator",
-};
-
 const SCHEMA = {
   ACCOUNT: "Account",
   OTP: "OTP",
@@ -38,7 +32,6 @@ const AccountSchema = new Schema(
     type: {
       type: String,
       // required: true,
-      enum: Object.values(USER_TYPE),
       // default: USER_TYPE.USER,
     },
     isActive: {
@@ -56,12 +49,20 @@ const AccountSchema = new Schema(
     },
     provider: {
       type: String,
-      enum: ["credentials", "google"],
+      enum: ["credentials", "google", "apple"],
       default: "credentials",
     },
     isDeleted: {
       type: Boolean,
       default: false,
+    },
+    videoCount: {
+      type: Number,
+      default: 0
+    },
+    fcmToken: {
+      type: [String],
+      default: [],
     }
   },
   { versionKey: false, timestamps: true }
