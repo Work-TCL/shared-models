@@ -16,7 +16,8 @@ const WalletTransactionSchema = new Schema(
         paymentMethod: { type: String },
         error: { type: String, default: "" },
         fees: { type: Number, default: 0},
-        tax: { type: Number, default: 0}
+        tax: { type: Number, default: 0},
+        walletImpactApplied: {type: Boolean, default: false}
     },
     { timestamps: true, versionKey: false }
 );
