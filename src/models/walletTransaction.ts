@@ -8,7 +8,7 @@ const WalletTransactionSchema = new Schema(
         vendorId: { type: Schema.Types.ObjectId, ref: "Vendor", required: true },
         walletId: { type: Schema.Types.ObjectId, ref: "Wallet", required: true },
         amount: { type: Number, required: true },
-        type: { type: String, enum: ['DEPOSIT', 'WITHDRAW'], required: true },
+        type: { type: String, enum: ['DEPOSITE', 'WITHDRAW'], required: true },
         status: { type: String, enum: ['pending', "success", "failed"], default: "pending" },
         description: { type: String },
         orderId: { type: String }, // for deposite
