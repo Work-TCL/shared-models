@@ -78,7 +78,7 @@ const ProductSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ["ACTIVE", "PENDING", "EXPIRED"],
+      enum: ["ACTIVE", "PENDING", "EXPIRED", "PAUSED"],
       default: "PENDING",
     },
     commission: {
