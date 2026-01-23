@@ -5,7 +5,7 @@ const { Schema } = Mongoose;
 const WalletTransactionSchema = new Schema(
     {
         accountId: { type: Schema.Types.ObjectId, ref: "Account", required: true },
-        vendorId: { type: Schema.Types.ObjectId, ref: "Vendor", required: true },
+        vendorId: { type: Schema.Types.ObjectId, ref: "Vendor", required: false },
         walletId: { type: Schema.Types.ObjectId, ref: "Wallet", required: true },
         amount: { type: Number, required: true },
         type: { type: String, enum: ['DEPOSITE', 'WITHDRAW'], required: true },
