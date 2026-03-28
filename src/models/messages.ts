@@ -36,5 +36,17 @@ const MessagesSchema = new Schema(
     { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
 );
 
+MessagesSchema.index({
+  collaborationId: 1,
+  creatorId: 1,
+  createdAt: -1,
+});
+
+MessagesSchema.index({
+  collaborationId: 1,
+  vendorId: 1,
+  createdAt: -1,
+});
+
 // export const MessagesModel = Mongoose.model(SCHEMA.CREATOR, MessagesSchema);
 export default MessagesSchema;
