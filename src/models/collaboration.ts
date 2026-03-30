@@ -34,6 +34,10 @@ const CollaborationSchema = new Schema(
       enum: ["REQUESTED", "PENDING", "ACTIVE", "REJECTED", "EXPIRED", "PAUSED", "DEACTIVATED"],
       default: "REQUESTED",
     },
+    seenByCreator: {
+      type: Boolean,
+      default: false
+    },
     utmLink: {
       type: String,
       default: null, // Will be set after UTM generation
