@@ -19,7 +19,7 @@ const TokenSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      expires: "30d",
+      expires: "7d",
     },
   },
   { versionKey: false },
