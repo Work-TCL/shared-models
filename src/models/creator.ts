@@ -43,5 +43,13 @@ const CreatorSchema = new Schema(
   { timestamps: true, versionKey: false }
 );
 
+CreatorSchema.index({
+  status: 1,           
+  user_name: 1,        
+  full_name: 1,        
+  category: 1,   
+  sub_category: 1
+});
+
 // export const CreatorModel = mongoose.model("Creator", CreatorSchema);
 export default CreatorSchema;
