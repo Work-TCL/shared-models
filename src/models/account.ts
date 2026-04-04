@@ -1,13 +1,5 @@
 import Mongoose from "mongoose";
 
-const SCHEMA = {
-  ACCOUNT: "Account",
-  OTP: "OTP",
-  BILLING_SCHEMA: "Billing",
-  VENDOR: "Vendor",
-  CREATOR: "Creator",
-};
-
 const { Schema } = Mongoose;
 
 // Account Schema
@@ -41,11 +33,6 @@ const AccountSchema = new Schema(
     isEmailVerified: {
       type: Boolean,
       default: false,
-    },
-    billingDetails: {
-      type: Schema.Types.ObjectId,
-      ref: SCHEMA.BILLING_SCHEMA,
-      required: false,
     },
     provider: {
       type: String,

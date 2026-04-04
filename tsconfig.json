@@ -11,6 +11,6 @@
     "resolveJsonModule": true,
     "moduleResolution": "node"
   },
-  "include": ["src/**/*.ts", "src/controller/creatorProduct"],
+  "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]
 }
