@@ -37,6 +37,10 @@ const CreatorChannelSchema = new Schema({
     },
     lastTokenGenerated: {
         type: Date
+    },
+    tokenExpired: {
+        type: Boolean,
+        default: false,
     }
 },{
     versionKey: false,
