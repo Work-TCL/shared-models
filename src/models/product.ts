@@ -39,12 +39,12 @@ const ProductSchema = new Schema(
       type: [String],
       default: [],
     },
-    price:{
+    price: {
       type: Number,
     },
     channelName: {
       type: String,
-      enum: ['shopify', 'wordpress','woocommerce', 'magento', 'bigcommerce', 'wix'],
+      enum: ['shopify', 'wordpress', 'woocommerce', 'magento', 'bigcommerce', 'wix'],
       required: true,
     },
     variantLabel: {
@@ -93,11 +93,11 @@ const ProductSchema = new Schema(
       type: String,
       enum: ["PERCENTAGE", "FIXED_AMOUNT"],
       required: true,
-    },  
+    },
     referenceLinks: {
       type: [String],
       default: [],
-    },  
+    },
     creatorMaterial: {
       type: [String],
       required: false,
@@ -106,30 +106,30 @@ const ProductSchema = new Schema(
       type: [String],
       required: true,
     },
-    channels:{
+    channels: {
       type: [String],
       enum: ["youtube", "instagram"],
       required: true,
-     },
-     notes: {
+    },
+    notes: {
       type: String,
-     },
-     discount: {
+    },
+    discount: {
       type: Number,
       required: false,
-     }, 
-     discountType: {
+    },
+    discountType: {
       type: String,
       enum: ["PERCENTAGE", "FIXED_AMOUNT"],
       required: false,
-     },
-     couponCode: {
+    },
+    couponCode: {
       type: String,
       required: false,
-     },
-     blockedDays:{
+    },
+    blockedDays: {
       type: Number
-     }
+    }
   },
   { versionKey: false, timestamps: true }
 );
