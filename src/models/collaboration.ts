@@ -87,15 +87,39 @@ const CollaborationSchema = new Schema(
     },
     deactivatedBy:{
       type: String,// creator or vendor
-    }
+    },
     // shop: {
     //   type: String,
     //   required: true,
     // }
+    seenByCreator: {
+      type: Boolean,
+      default: false,
+    }
   },
   { versionKey: false, timestamps: true }
 );
 
+CollaborationSchema.index({ vendorId: 1, updatedAt: -1 });
+CollaborationSchema.index({ creatorId: 1, updatedAt: -1 });
+CollaborationSchema.index({
+  vendorId: 1,
+  collaborationStatus: 1,
+  updatedAt: -1,
+});
+CollaborationSchema.index({
+  creatorId: 1,
+  collaborationStatus: 1,
+  updatedAt: -1,
+});
+CollaborationSchema.index({
+  vendorId: 1,
+  productId: 1,
+});
+CollaborationSchema.index({
+  creatorId: 1,
+  productId: 1,
+});
 // export const CollaborationModel = mongoose.model("Collaboration", CollaborationSchema);
 export default CollaborationSchema;
 
