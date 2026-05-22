@@ -3,16 +3,19 @@
   "branches": [
     "A_dev",
     "dev",
+    "dev_latest",
     "main"
   ],
   "parent": {
     "A_dev": "main",
     "dev": "main",
+    "dev_latest": "main",
     "main": null
   },
   "order": [
     "main",
     "A_dev",
-    "dev"
+    "dev",
+    "dev_latest"
   ]
 }
