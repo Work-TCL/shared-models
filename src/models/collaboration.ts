@@ -87,11 +87,15 @@ const CollaborationSchema = new Schema(
     },
     deactivatedBy:{
       type: String,// creator or vendor
-    }
+    },
     // shop: {
     //   type: String,
     //   required: true,
     // }
+    seenByCreator: {
+      type: Boolean,
+      default: false,
+    }
   },
   { versionKey: false, timestamps: true }
 );
