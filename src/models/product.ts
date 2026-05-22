@@ -35,6 +35,10 @@ const ProductSchema = new Schema(
       type: [String],
       default: [],
     },
+    originalMedia: {
+      type: [String],
+      default: [],
+    },
     price:{
       type: Number,
     },
