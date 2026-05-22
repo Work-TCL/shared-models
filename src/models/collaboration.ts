@@ -34,6 +34,10 @@ const CollaborationSchema = new Schema(
       enum: ["REQUESTED", "PENDING", "ACTIVE", "REJECTED", "EXPIRED", "PAUSED", "DEACTIVATED"],
       default: "REQUESTED",
     },
+    seenByCreator: {
+      type: Boolean,
+      default: false
+    },
     utmLink: {
       type: String,
       default: null, // Will be set after UTM generation
@@ -85,7 +89,7 @@ const CollaborationSchema = new Schema(
       agreedByCreator: { type: Boolean, default: false },
       agreedByVendor: { type: Boolean, default: false },
     },
-    deactivatedBy:{
+    deactivatedBy: {
       type: String,// creator or vendor
     },
     // shop: {

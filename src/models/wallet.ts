@@ -6,7 +6,9 @@ const WalletSchema = new Schema(
     {
         accountId: { type: Schema.Types.ObjectId, ref: "Account", required: true },
         blockedBalance: { type: Number, default: 0 },
-        balance: { type: Number, default: 0 }
+        balance: { type: Number, default: 0 },
+        lastWithdrawAt: { type: Date, default: null }
+
     },
     { timestamps: true, versionKey: false } // Automatically adds createdAt & updatedAt
 );
