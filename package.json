@@ -18,6 +18,8 @@
   "homepage": "https://github.com/AkshaySangani/shared-models#readme",
   "description": "",
   "dependencies": {
-    "mongoose": "^8.12.1"
+    "dotenv": "^8.2.0",
+    "mongoose": "^8.12.1",
+    "node-fetch": "^3.3.2"
   }
 }

@@ -96,10 +96,6 @@ const CollaborationSchema = new Schema(
     //   type: String,
     //   required: true,
     // }
-    seenByCreator: {
-      type: Boolean,
-      default: false,
-    }
   },
   { versionKey: false, timestamps: true }
 );
